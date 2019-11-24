@@ -1,0 +1,39 @@
+<% include ../../partials/header %>
+
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center;">
+			Create A New Tutor Session
+		</h1>
+		<div style="width: 30%; margin: 25px auto;">
+			<form action="/tutorClassroom/meetings/createMeeting" method="POST">
+				<label for="topic-input" class="col-2 col-form-label">Topic</label>
+				<div class="form-group">
+					<input class="form-control" type="text" name="topic" placeholder="Topic" id="topic-input">
+				</div>
+				
+				
+				<div class="form-group">
+				  <label for="datetime-local-input" class="col-2 col-form-label">Date and time</label>
+				  <div class="col-10">
+					<input class="form-control" name="start_time" type="datetime-local" value="2019-11-03T13:45:00" id="datetime-local-input">
+				  </div>
+				</div>
+				
+				<label for="duration-input" class="col-2 col-form-label">Duration</label>
+				<div class="form-group">
+					<input class="form-control" type="Number" name="duration" placeholder="Duration" id="duration-input">
+				</div>
+					
+				<button class="btn btn-lg btn-primary btn-default btn-block">
+					Submit!
+				</button>
+			</form>
+			<a href="/tutorClassroom">Go Back</a>
+		</div>
+
+	
+		
+	</div>
+</div>
+<% include ../../partials/footer %>

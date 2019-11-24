@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+<div class="container">
+	<div class = "row">
+		<h1 style="text-align: center;">
+			Welcome Tutor!
+		</h1>
+</div>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+				<p class="lead">Upcoming Tutor Sessions</p>
+				<a class = "btn btn-large btn-success" href="/tutorClassroom/meetings/new">Create New Tutor Session</a
+
+			<table id="tutorSessionsTable" class="table">
+				<thead>
+					  <th scope="col">Topic</th>
+					  <th scope="col">Time</th>
+					  <th scope="col">Duration</th>
+					  <th scope="col">Join Classroom Link</th>
+				</thead>
+				<tbody>
+					<% meetings.forEach(function(meeting){ %>
+						<tr>
+							<th>
+								<strong><%= meeting.topic %></strong>
+							</th>
+							<th>
+								<strong><%= meeting.start_time %></strong>
+							</th>
+							<th>
+								<strong><%= meeting.duration %></strong>
+							</th>
+							<th>
+								<a class = "btn btn-small btn-primary" href="<%= meeting.join_url %>">Join!</a>
+							</th>
+						</tr>
+					<% }); %>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div> 
+	
+	
+	
+
+<% include ../partials/footer %>
